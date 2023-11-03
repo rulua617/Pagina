@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+
+
+    <title>Juegos</title>
+ 
+
+</head>
+
+<body>
+    <header>
+        <main class="nave">
+
+            <nav class="navegacion">
+                <ul>
+                    <img class="btn-menu" id="btn-menu" src="../icons/menu (1).png" alt="menu"></a>
+                    <li><a href="../index.html"><img src="../icons/casa.png" alt="inicio"> Inicio</a></li>
+                    <li><a href="../lessons/lecciones.html"> <img src="../icons/carpeta.png" alt="lecciones">
+                            Lecciones</a></li>
+                    <li><a href="../games/juegos.html"> <img src="../icons/cohete.png" alt="juegos">Juegos</a></li>
+                    <li><a href="../projects/proyectos.html"> <img src="../icons/prueba.png"
+                                alt="proyecto">Proyectos</a>
+                    </li>
+                    <li><a href="../forum/evaluaciones.html"> <img src="../icons/evaluaciones.png"
+                                alt="evaluaciones">Evaluaciones</a>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+        <!-- boton de cerrar el menu -->
+        <div class="menu" id="menu">
+            <img class="close-menu" id="close-menu" img src="../icons/marca.png" alt="cerrar" width="30px"
+                height="30px"></img>
+
+
+
+            <ul>
+                <li><a href="../index.html"> <img src="../icons/casaC.png" alt="inicio"> Inicio</a></li>
+                <li><a href="../lessons/lecciones.html"> <img src="../icons/carpetaC.png" alt="lecciones"> Lecciones</a>
+                </li>
+                <li><a href="../games/juegos.html"> <img src="../icons/coheteC.png" alt="juegos">Juegos</a></li>
+                <li><a href="../projects/proyectos.html"> <img src="../icons/pruebaC.png" alt="proyecto"> Proyectos</a>
+                </li>
+                <li><a href="../forum/evaluaciones.html"> <img src="../icons/evaluacionesC.png" alt="evaluaciones">Evaluaciones</a>
+                </li>
+                <li>
+                    <a href="../characters/elementos.html"> <img src="../icons/ideaC.png" alt="pregunta">Conozcamos los
+                        elementos</a>
+                </li>
+
+
+
+            </ul>
+        </div>
+    </header><br><br><br><br><br>
+    <h1>
+        Aqui conoceras la funcion de casi todos los elemtos de HTML y CSS
+    </h1>
+    <p>Solo has click sobre el elemnto que deseas conocer y te aparecera una pequña ventana emergente </p>
+
+
+    <div class="fin">
+       
+
+        <div class="contenedor">
+            <h2>Elementos de Texto</h2>
+            <p id="boton1" class="boton" onclick="mostrarPopUp('Define párrafos de texto en tu página web.')">&lt;p&gt;
+            </p>
+            <p id="boton2" class="boton"
+                onclick="mostrarPopUp('Crea títulos de primer nivel para encabezados principales.')">&lt;h1&gt;</p>
+            <p id="boton3" class="boton"
+                onclick="mostrarPopUp('Permite crear enlaces hipertexto a otras páginas o recursos.')">&lt;a&gt;</p>
+        </div>
+        <div class="contenedor">
+            <h2>Elementos de Lista</h2>
+            <p id="boton4" class="boton" onclick="mostrarPopUp('Crea listas no ordenadas con viñetas.')">&lt;ul&gt;</p>
+            <p id="boton5" class="boton" onclick="mostrarPopUp('Genera listas ordenadas con números o letras.')">
+                &lt;ol&gt;
+            </p>
+        </div>
+        <div class="contenedor">
+            <h2>Elementos de Tablas</h2>
+            <p id="boton6" class="boton" onclick="mostrarPopUp('Define tablas para organizar datos estructurados.')">
+                &lt;table&gt;</p>
+            <p id="boton7" class="boton" onclick="mostrarPopUp('Crea filas de una tabla.')">&lt;tr&gt;</p>
+            <p id="boton8" class="boton" onclick="mostrarPopUp('Define celdas de encabezado en una tabla.')">&lt;th&gt;
+            </p>
+            <p id="boton9" class="boton" onclick="mostrarPopUp('Celdas de datos en una tabla.')">&lt;td&gt;</p>
+
+        </div>
+        <div class="contenedor">
+            <h2>Elementos de Formularios</h2>
+            <p id="boton10" class="boton"
+                onclick="mostrarPopUp('Define formularios para la entrada de datos del usuario.')">&lt;form&gt;</p>
+            <p id="boton11" class="boton" onclick="mostrarPopUp('Crea campos de entrada de datos en formularios.')">
+                &lt;input&gt;</p>
+            <p id="boton12" class="boton" onclick="mostrarPopUp('Agrega botones de acción en formularios.')">
+                &lt;button&gt;
+            </p>
+            <p id="boton13" class="boton" onclick="mostrarPopUp('Etiquetas para campos de formulario.')">&lt;label&gt;
+            </p>
+            <p id="boton14" class="boton" onclick="mostrarPopUp('Crea listas desplegables para seleccionar opciones.')">
+                &lt;select&gt;</p>
+            <p id="boton15" class="boton" onclick="mostrarPopUp('Áreas de texto para ingreso de texto extenso.')">
+                &lt;textarea&gt;</p>
+
+        </div>
+        <div class="contenedor">
+            <h2>Elementos Multimedia</h2>
+            <p id="boton16" class="boton" onclick="mostrarPopUp('Inserta imágenes en tu página web.')">&lt;img&gt;</p>
+            <p id="boton17" class="boton" onclick="mostrarPopUp('Incorpora elementos de audio en tu sitio.')">
+                &lt;audio&gt;
+            </p>
+            <p id="boton18" class="boton" onclick="mostrarPopUp('Añade reproducción de video en tu contenido.')">
+                &lt;video&gt;</p>
+            <p id="boton19" class="boton"
+                onclick="mostrarPopUp('Agrupa contenido relacionado como imágenes y figuras.')">
+                &lt;figure&gt;</p>
+        </div>
+        <div class="contenedor">
+            <h2>Grupo de Documento</h2>
+            <p id="boton20" class="boton" onclick="mostrarPopUp('El elemento raíz del documento HTML.')">&lt;html&gt;
+            </p>
+            <p id="boton21" class="boton" onclick="mostrarPopUp('Contiene metadatos y enlaces a recursos.')">
+                &lt;head&gt;
+            </p>
+            <p id="boton22" class="boton" onclick="mostrarPopUp('Define el título de la página en el navegador.')">
+                &lt;title&gt;</p>
+        </div>
+
+        <div class="contenedor">
+
+            <h2>Contenido Principal</h2>
+            <p id="boton23" class="boton"
+                onclick="mostrarPopUp('Contiene el contenido principal visible en la página.')">
+                &lt;body&gt;</p>
+
+        </div>
+
+
+        <div class="contenedor">
+
+
+            <h2>Secciones Temáticas</h2>
+            <p id="boton24" class="boton" onclick="mostrarPopUp('Define una sección temática en el contenido.')">
+                &lt;section&gt;</p>
+            <p id="boton25" class="boton" onclick="mostrarPopUp('Define un contenido autónomo y autocontenido.')">
+                &lt;article&gt;</p>
+
+        </div>
+        <div class="contenedor">
+            <h2>Secciones Temáticas (Continuación)</h2>
+            <p id="boton25" class="boton" onclick="mostrarPopUp('Define un contenido autónomo y autocontenido.')">
+                &lt;article&gt;</p>
+            <p id="boton26" class="boton"
+                onclick="mostrarPopUp('Agrupa contenido relacionado y subordinado en una página.')">&lt;aside&gt;</p>
+            <p id="boton27" class="boton" onclick="mostrarPopUp('Define bloques de texto citado de otra fuente.')">
+                &lt;blockquote&gt;</p>
+            <p id="boton28" class="boton"
+                onclick="mostrarPopUp('Crea líneas de código o fragmentos de código fuente.')">
+                &lt;code&gt;</p>
+            <p id="boton29" class="boton" onclick="mostrarPopUp('Define una cita en línea o texto citado.')">&lt;q&gt;
+            </p>
+            <p id="boton30" class="boton" onclick="mostrarPopUp('Define una cita o referencia a un trabajo.')">
+                &lt;cite&gt;
+            </p>
+        </div>
+
+        <div class="contenedor">
+
+            <h2>Elementos de Contenido en Línea</h2>
+            <p id="boton31" class="boton" onclick="mostrarPopUp('Texto enfatizado fuertemente.')">&lt;strong&gt;</p>
+            <p id="boton32" class="boton" onclick="mostrarPopUp('Texto enfatizado o destacado.')">&lt;em&gt;</p>
+            <p id="boton33" class="boton" onclick="mostrarPopUp('Texto en negrita.')">&lt;b&gt;</p>
+            <p id="boton34" class="boton" onclick="mostrarPopUp('Texto en cursiva.')">&lt;i&gt;</p>
+            <p id="boton35" class="boton" onclick="mostrarPopUp('Texto subrayado.')">&lt;u&gt;</p>
+            <p id="boton36" class="boton" onclick="mostrarPopUp('Texto como subíndice.')">&lt;sub&gt;</p>
+            <p id="boton37" class="boton" onclick="mostrarPopUp('Texto como superíndice.')">&lt;sup&gt;</p>
+
+        </div>
+        <div class="contenedor">
+            <h2>Elementos de Contenido Especializado</h2>
+            <p id="boton38" class="boton" onclick="mostrarPopUp('Abreviatura o acrónimo.')">&lt;abbr&gt;</p>
+            <p id="boton39" class="boton"
+                onclick="mostrarPopUp('Texto preformateado con espacios y saltos de línea conservados.')">&lt;pre&gt;
+            </p>
+            <p id="boton40" class="boton" onclick="mostrarPopUp('Línea horizontal para separar contenido.')">&lt;hr&gt;
+            </p>
+            <p id="boton41" class="boton"
+                onclick="mostrarPopUp('Marco en línea para contenido incrustado de otra fuente.')">&lt;iframe&gt;</p>
+            <p id="boton42" class="boton"
+                onclick="mostrarPopUp('Define contenido independiente en un flujo de texto.')">
+                &lt;object&gt;</p>
+            <p id="boton43" class="boton" onclick="mostrarPopUp('Crea una lista de definiciones.')">&lt;dl&gt;</p>
+            <p id="boton44" class="boton" onclick="mostrarPopUp('Define un término en una lista de definiciones.')">
+                &lt;dt&gt;</p>
+            <p id="boton45" class="boton"
+                onclick="mostrarPopUp('Proporciona la definición de un término en una lista de definiciones.')">
+                &lt;dd&gt;
+            </p>
+        </div>
+
+        <div class="contenedor">
+
+            <h2>Elementos de Contenido Integrado</h2>
+            <p id="boton46" class="boton" onclick="mostrarPopUp('Elemento de audio o sonido.')">&lt;audio&gt;</p>
+            <p id="boton47" class="boton" onclick="mostrarPopUp('Elemento de video o multimedia.')">&lt;video&gt;</p>
+            <p id="boton48" class="boton" onclick="mostrarPopUp('Elemento de imagen.')">&lt;img&gt;</p>
+            <p id="boton49" class="boton" onclick="mostrarPopUp('Elemento de marca de mapa de imagen.')">&lt;map&gt;</p>
+            <p id="boton50" class="boton"
+                onclick="mostrarPopUp('Elemento de lista de marcadores para listas personalizadas.')">&lt;menu&gt;</p>
+            <p id="boton51" class="boton" onclick="mostrarPopUp('Elemento de objeto incrustado.')">&lt;embed&gt;</p>
+            <p id="boton52" class="boton" onclick="mostrarPopUp('Elemento de objeto incrustado.')">&lt;object&gt;</p>
+            <p id="boton53" class="boton" onclick="mostrarPopUp('Elemento de video incrustado.')">&lt;source&gt;</p>
+            <p id="boton54" class="boton" onclick="mostrarPopUp('Elemento de subtítulos para contenido multimedia.')">
+                &lt;track&gt;</p>
+            <p id="boton55" class="boton" onclick="mostrarPopUp('Elemento de imagen con mapa de imagen.')">&lt;area&gt;
+            </p>
+        </div>
+
+
+        <div class="contenedor">
+            <h2>Elementos de Formularios (Continuación)</h2>
+            <p id="boton56" class="boton" onclick="mostrarPopUp('Define un botón de restablecer en un formulario.')">
+                &lt;reset&gt;</p>
+            <p id="boton57" class="boton"
+                onclick="mostrarPopUp('Agrupa opciones de selección en una lista desplegable.')">
+                &lt;optgroup&gt;</p>
+            <p id="boton58" class="boton" onclick="mostrarPopUp('Elemento de opción en una lista desplegable.')">
+                &lt;option&gt;</p>
+            <p id="boton59" class="boton" onclick="mostrarPopUp('Elemento de botón de envío en un formulario.')">
+                &lt;submit&gt;</p>
+            <p id="boton60" class="boton" onclick="mostrarPopUp('Elemento de botón en un formulario.')">&lt;button&gt;
+            </p>
+        </div>
+    </div>
+
+
+
+    </div>
+    <div id="popUp" class="pop-up">
+        <div id="contenidoPopUp">
+            <span id="textoPopUp">Texto de ejemplo</span><br>
+            <button id="cerrarPopUp" onclick="cerrarPopUp()">Cerrar</button>
+        </div>
+    </div>
+
+
+    <section id="resultado">
+        <h2>Resultado:</h2>
+        <p>Esta es la forma en la que te debe quedar tu archivo HTML al ejecutarlo</p>
+        <iframe id="preview5" width="100%" height="300"></iframe>
+    </section>
+
+
+    <script src="../scripts/main.js"></script>
+
+
+    <footer>
+        <p>&copy; 2023 Programación para Niños</p>
+    </footer>
+</body>
+
+</html>

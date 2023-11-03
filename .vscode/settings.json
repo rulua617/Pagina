@@ -1,0 +1,6 @@
+{
+    "editor.fontFamily": "'Comic Mono' ,Consolas, 'Courier New', monospace",
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.guides.bracketPairs": "active"
+}

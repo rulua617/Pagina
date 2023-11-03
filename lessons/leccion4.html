@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecciones para Niños</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-image: linear-gradient(to right, #ffecd2, #fcb69f);
+            margin: 0;
+        }
+
+        header {
+            background-color: #62bfed;
+            padding: 10px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .nave {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navegacion ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navegacion li {
+            margin-right: 10px;
+        }
+
+        .navegacion a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 15px;
+            border: 2px solid #fff;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navegacion a:hover {
+            background-color: #fff;
+            color: #62bfed;
+        }
+
+        .lecciones {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .leccion {
+            background-color: #fff;
+            border: 5px solid #62bfed;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #62bfed;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #62bfed;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+
+
+        /* Estilo existente */
+
+        /* ... */
+
+        @media only screen and (max-width: 768px) {
+            .toggle-menu {
+                display: flex;
+            }
+
+            /*  .navegacion {
+                position: static;
+                max-height: 100%;
+                display: none;
+               
+            } */
+
+            .navegacion.active {
+                display: flex;
+                /* Muestra la navegación cuando está activa */
+                flex-direction: column;
+                align-items: flex-end;
+                text-align: right;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #62bfed;
+                width: 100%;
+                max-height: none;
+                /* Muestra la navegación completa */
+            }
+
+            .navegacion ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .navegacion li {
+                margin: 10px 0;
+            }
+
+            .navegacion a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                font-size: 16px;
+                transition: color 0.3s ease;
+            }
+
+            .navegacion a:hover {
+                color: #fff;
+            }
+        }
+
+        /* Estilo existente */
+
+        /* ... */
+
+        .toggle-menu {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        /* ... */
+
+        /* ... */
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <main class="nave">
+            <div class="toggle-menu" onclick="toggleNav()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <nav class="navegacion">
+                <ul>
+                    <li><a href="../index.html"><img src="../icons/casa.png" alt="inicio"> Inicio</a></li>
+                    <li><a href="../lessons/lecciones.html"> <img src="../icons/carpeta.png" alt="lecciones">
+                            Lecciones</a></li>
+                    <li><a href="../games/juegos.html"> <img src="../icons/cohete.png" alt="juegos">Juegos</a></li>
+                    <li><a href="../projects/proyectos.html"> <img src="../icons/prueba.png"
+                                alt="proyecto">Proyectos</a>
+                    </li>
+                    <li><a href="../forum/evaluaciones.html"> <img src="../icons/evaluaciones.png"
+                                alt="evaluaciones">Evaluaciones</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </main>
+
+    </header>
+
+
+
+
+    <section class="lecciones">
+        <div class="leccion">
+            <h2>Lección 1: Introducción a HTML</h2>
+            <p>Descubre los secretos del lenguaje web y crea tu propia página mágica.</p>
+            <a href="../lessons/leccion1.html" class="boton">¡A explorar!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 2: Más sobre HTML - Texto y Enlaces</h2>
+            <p>Aprende sobre texto enriquecido y cómo enlazar contenido en tus páginas.</p>
+            <a href="../lessons/leccion2.html" class="boton">¡Continuar!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 3: Diversión con Formularios y Multimedia</h2>
+            <p>Explora formularios básicos y la integración de contenido multimedia.</p>
+            <a href="../lessons/leccion3.html" class="boton">¡Adelante al mundo de los formularios!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 4: Listas y Tablas en HTML</h2>
+            <p>Aprende sobre listas y tablas, organizando información de manera divertida.</p>
+            <a href="../lessons/leccion4.html" class="boton">¡Explorar listas y tablas!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 5: Enlaces Avanzados y Elementos de Texto</h2>
+            <p>Descubre enlaces avanzados y cómo dar estilo a tu texto.</p>
+            <a href="../lessons/leccion5.html" class="boton">¡Continuar con estilos de texto!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 6: Más sobre Formularios y Elementos Multimedia</h2>
+            <p>Explora elementos adicionales de formularios y experimenta con multimedia.</p>
+            <a href="../lessons/leccion6.html" class="boton">¡Adelante al mundo de los formularios y multimedia!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 7: Estructura Avanzada con HTML</h2>
+            <p>Aprende a estructurar páginas web de manera avanzada con HTML.</p>
+            <a href="../lessons/leccion7.html" class="boton">¡Explorar estructuras avanzadas!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 8: Formatos y Estilos de Texto en HTML</h2>
+            <p>Aplica formatos y estilos divertidos a tu texto en HTML.</p>
+            <a href="../lessons/leccion8.html" class="boton">¡Continuar con estilos!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 9: Incorporación de Listas Avanzadas en HTML</h2>
+            <p>Descubre listas anidadas y personalizadas en HTML.</p>
+            <a href="../lessons/leccion9.html" class="boton">¡Explorar listas avanzadas!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 10: Enlaces a Recursos Externos y Embeber Contenido</h2>
+            <p>Enlaza a recursos externos y aprende a embeber contenido en tus páginas.</p>
+            <a href="../lessons/leccion10.html" class="boton">¡Continuar con enlaces y embebidos!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 11: Uso de Semántica en HTML</h2>
+            <p>Explora elementos semánticos y dale significado a tu código HTML.</p>
+            <a href="../lessons/leccion11.html" class="boton">¡Adelante con la semántica!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 12: Elementos Avanzados de Tablas en HTML</h2>
+            <p>Aprende a crear tablas complejas con elementos avanzados.</p>
+            <a href="../lessons/leccion12.html" class="boton">¡Explorar tablas avanzadas!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 13: Proyecto Final: Integración HTML Completa</h2>
+            <p>Revisa y optimiza el código HTML y crea un proyecto final completo.</p>
+            <a href="../lessons/leccion13.html" class="boton">¡Proyecto final emocionante!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 14: Introducción a CSS</h2>
+            <p>Descubre cómo dar estilo a tus páginas web con CSS.</p>
+            <a href="../lessons/leccion14.html" class="boton">¡Adentrarse en el mundo de CSS!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 15: Más Estilos con CSS</h2>
+            <p>Aprende estilos avanzados, clases e ID para dar vida a tus páginas.</p>
+            <a href="../lessons/leccion15.html" class="boton">¡Continuar con estilos increíbles!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 16: Diseño Responsivo con Media Queries</h2>
+            <p>Descubre principios de diseño responsivo y utiliza media queries.</p>
+            <a href="../lessons/leccion16.html" class="boton">¡Adelante con el diseño responsivo!</a>
+        </div>
+
+        <div class="leccion">
+            <h2>Lección 17: Introducción a Flexbox y Grid en CSS</h2>
+            <p>Aprende a crear diseños flexibles y complejos con Flexbox y Grid.</p>
+            <a href="../lessons/leccion17.html" class="boton">¡Explorar el mundo de Flexbox y Grid!</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Lecciones para Niños 🌟</p>
+    </footer>
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+
+        // Cierra la navegación si se hace clic en un enlace
+        var links = document.querySelectorAll('.navegacion a');
+        links.forEach(function (link) {
+            link.addEventListener('click', function () {
+                var nav = document.getElementById('nav');
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

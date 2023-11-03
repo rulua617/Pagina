@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rata🐀</title>
+    <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    background: beige;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.game-over .contenedor {
+    animation: none;
+}
+
+.contenedor {
+    width: 920px;
+    height: 340px;
+     margin: 0 auto;
+    position: relative;
+    background-image: url('../Rata/rata-img/piso.png');
+background-size: 100% 100%;
+  /*linear-gradient(#90ebff, white);*/
+    transition: background-color 1s linear;
+    overflow: hidden;
+}
+
+.mediodia {
+    background-color: #ffdcf3;
+}
+
+.tarde {
+    background-color: #ffadad;
+}
+
+.noche {
+    background-color: #aca8c7;
+}
+
+.dino {
+    width: 80px;
+    height: 45px;
+    
+
+    position: absolute;
+     bottom: 20px;
+  
+      
+    left: 42px;
+    z-index: 2;
+
+    background: url(../Rata/rata-img/Rata.gif) no-repeat;
+    background-size: 80px 45px;
+    
+
+}
+
+.dino-corriendo {
+    /* animation: animarDino 0.25s steps(2) infinite;
+    .dino-estrellado {
+    background-position-x: -252px;
+}*/
+}
+
+
+.suelo {
+    width: 200%;
+    height: 17px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background: url(../Rata/rata-img/suelo.png) repeat-x 0px 0px;
+    background-size: 50% 42px;
+
+}
+.techo {
+       width: 200%;
+    height:17px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: url(../Rata/rata-img/suelo.png) repeat-x 0px 0px;
+    background-size: 50% 42px;
+    transform: rotate(180deg);
+}
+
+.cactus{
+    width: 40px;
+    height: 30px;
+
+    position: absolute;
+    bottom: 16px;
+    left: 600px;
+    z-index: 1;
+
+    background: url(../Rata/rata-img/Trampa.png) no-repeat;
+     background-size: 40px 30px;
+}
+.cactus2{
+    width: 40px;
+    height: 30px;
+z-index:1;
+
+     background: url(../Rata/rata-img/trampa2.png) no-repeat;
+    background-size: 40px 30px;
+}
+.queso {
+    width: 40px;
+    height: 30px;
+    
+    position: absolute;
+    bottom: 16px;
+    left: 600px;
+    z-index: 1;
+    background: url(../Rata/rata-img/Queso.png) no-repeat;
+    background-size: 40px 30px;
+        
+}
+
+.nube{
+    width: 40px;
+    height: 26px;
+
+    position: absolute;
+    z-index: 0;
+
+    background: url(../Rata/rata-img/sc.png) no-repeat;
+    background-size: 40px 26px;
+}
+
+.score{
+    width: 58px;
+    height: 32px;
+
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 10;
+    
+
+    color:#b8b8b8;
+      font-family: 'Pixelify Sans', sans-serif;
+    font-size: 35px;
+    -webkit-text-stroke: 2px #000000;
+    font-weight: bold;
+    padding-bottom: 10px; /* Espacio en la parte inferior */
+    padding-left: 6px; /* Espacio en el lado izquierdo */
+    padding-right: 10px;
+     background:#575d8386;
+    border-radius: 9px ;
+    border: 5px black double;
+}
+
+.game-over{
+    display: none;
+
+    position: absolute;
+    width: 100%;
+ z-index: 20;
+
+    text-align: center;
+    color:#b8b8b8;
+    font-size: 38px;
+  font-family: 'Pixelify Sans', sans-serif;
+    font-weight: 700;
+      background: #000000a5;
+      -webkit-text-stroke: 2px #000000;
+}
+
+
+#reiniciar {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50px; /* Ajusta la distancia desde arriba según tus preferencias */
+        left: 50%; /* Coloca el botón en el centro horizontalmente */
+        transform: translateX(-50%); /* Centra horizontalmente el botón */
+      
+        
+        border-radius: 50%; /* Hace que el contenedor sea un círculo */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+   
+    }
+.ganaste{
+    display: none;
+
+    position: absolute;
+    width: 100%;
+
+
+    text-align: center;
+    color: #7e928b;
+    font-size: 30px;
+    font-family: Verdana;
+    font-weight: 700;
+}
+
+@keyframes animarDino{
+    from{
+        background-position-x: -84px;
+    }
+    to{
+        background-position-x: -252px;
+    }
+}
+
+.mensaje-queso {
+    color: #ffffff;
+    display: none;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#82b87b;
+    padding: 10px;
+    border: 4px double #4a3db8;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+.ll{ 
+    width: auto;
+    
+
+    position: absolute;
+    top: 5px;
+    
+    z-index: 60;
+    
+
+    color:#b8b8b8;
+      font-family:  sans-serif;
+    font-size: 24px;
+    -webkit-text-stroke: 1px #000000;
+    
+    
+     background:#8098ff;
+    border-radius: 9px ;
+    border: 5px black double;
+}
+    
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="contenedor">
+        <h3 class="ll"> Recoge todos los quesos 🧀 que puedas y evita las trampas 🪤!! </h3>
+      
+        <div class="suelo"></div>
+        
+        <div class="dino dino-corriendo"></div>
+
+        <div class="score">000</div>
+<div class="techo"></div>
+    </div>
+    <div class="ganaste">
+        Ganaste 
+    </div>
+<div class="mensaje-queso"> </div>
+
+    <div class="game-over">GAME OVER 
+    <div class="gameo2""> 
+        <img id="reiniciar" src="../Rata/rata-img/reiniciar.png" alt="Botón de Reinicio" onclick="ReiniciarJuego()">
+    </div>
+    </div>
+    
+
+<script>  //****** GAME LOOP ********//
+
+var time = new Date();
+var deltaTime = 0;
+
+
+if (document.readyState === "complete" || document.readyState === "interactive") {
+    setTimeout(Init, 1);
+} else {
+    document.addEventListener("DOMContentLoaded", Init);
+}
+
+function Init() {
+    time = new Date();
+     
+       
+    Start();
+    Loop();
+ 
+}
+ 
+
+function Loop() {
+    deltaTime = (new Date() - time) / 1000;
+    time = new Date();
+    Update();
+   
+    requestAnimationFrame(Loop);
+    
+}
+
+//****** GAME LOGIC ********//
+
+var sueloY = 22;
+var techoY = 22;
+var velY = 0;
+var impulso = 900;
+var gravedad = 0;
+
+var dinoPosX = 42;
+var dinoPosY = sueloY;
+
+var sueloX = 0;
+var techoX = 0;
+var velEscenario = 1280 / 3;
+var gameVel = 1;
+var score = 0;
+
+var parado = false;
+var saltando = false;
+
+var tiempoHastaObstaculo = 3;
+var tiempoObstaculoMin = 1;
+var tiempoObstaculoMax = 1.8;
+var obstaculos = [];
+
+var tiempoHastaQueso = 3;
+var tiempoQuesoMin = 1;
+var tiempoQuesoMax = 1.8;
+var quesos = [];
+
+var tiempoHastaNube = 0.5;
+var tiempoNubeMin = 0.7;
+var tiempoNubeMax = 2.7;
+var maxNubeY = 270;
+var minNubeY = 100;
+var nubes = [];
+var velNube = 0.5;
+
+var ultimaPosicionObstaculo = 0;
+var ultimaPosicionQueso = 0;
+
+var contenedor;
+var dino;
+var textoScore;
+var suelo;
+var gameOver;
+var delay = 3; // Retraso en segundos
+var techo;
+const elementosHTML = [
+    '<h1>',
+    '<body>',
+    '<html>',
+    '<p>',
+    '<a>',
+    '<div>',
+    '<span>',
+    '<ul>',
+    '<li>',
+    '<strong>',
+    '<em>',
+    '<button>',
+    '<form>',
+    '<input>',
+    '<table>',
+    '<tr>',
+    '<td>',
+    '<img>',
+];
+
+
+
+
+function Start() {
+    gameOver = document.querySelector(".game-over");
+    suelo = document.querySelector(".suelo");
+    techo = document.querySelector(".techo");
+    contenedor = document.querySelector(".contenedor");
+    
+    textoScore = document.querySelector(".score");
+    dino = document.querySelector(".dino");
+    document.addEventListener("keydown", HandleKeyDown);
+}
+
+function Update() {
+    if (parado) return;
+
+    MoverDinosaurio();
+    MoverTecho();
+    MoverSuelo();
+    DecidirCrearObstaculos();
+    DecidirCrearNubes();
+    DecidirCrearQuesos();
+    MoverObstaculos();
+   MoverQuesos();
+   
+    MoverNubes();
+    DetectarColision();
+
+    velY -= gravedad * deltaTime;
+}
+
+// Agregar controladores de eventos para deslizamiento táctil
+document.addEventListener("touchstart", handleTouchStart, { passive: false });
+document.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+// Función para manejar inicio de toque
+function handleTouchStart(event) {
+    // Evitar que el evento táctil se procese por defecto
+    event.preventDefault();
+    // Resto de tu lógica de inicio de toque
+}
+
+// Función para manejar movimiento de toque
+function handleTouchMove(event) {
+    // Evitar que el evento táctil se procese por defecto
+    event.preventDefault();
+    // Resto de tu lógica de movimiento de toque
+}
+
+
+function HandleKeyDown(ev) {
+    if (ev.keyCode == 32) {
+        Saltar();
+    }
+}
+
+function Saltar() {
+    if (dinoPosY === sueloY) {
+        saltando = true;
+        velY = impulso;
+        dino.classList.remove("dino-corriendo");
+    }
+}
+
+function MoverDinosaurio() {
+    dinoPosY += velY * deltaTime;
+    if (dinoPosY < techoY) { // Cambia de sueloY a techoY para verificar el techo
+        TocarTecho(); // Llama a la función TocarTecho si toca el techo
+    } else if (dinoPosY < sueloY) { // Cambia de sueloY a techoY para verificar el techo
+        TocarSuelo(); // Llama a la función TocarSuelo si toca el suelo
+    }
+    
+    dino.style.bottom = dinoPosY + "px";
+}
+// Espera 3 segundos (2200 milisegundos) y luego oculta el elemento con la clase "ll"
+setTimeout(function() {
+    var elementos = document.getElementsByClassName("ll");
+    if (elementos.length > 0) {
+        elementos[0].style.display = "none";
+    }
+}, 3000);
+
+function TocarTecho() {
+    dinoPosY = techoY; // Cambia la posición vertical del dinosaurio para que toque el techo
+    velY = 0;
+    if (saltando) {
+        dino.classList.add("dino-corriendo");
+    }
+    saltando = false;
+}
+
+function TocarSuelo() {
+    dinoPosY = sueloY; // Cambia la posición vertical del dinosaurio para que toque el suelo
+    velY = 0;
+    if (saltando) {
+        dino.classList.add("dino-corriendo");
+    }
+    saltando = false;
+}
+  
+
+
+
+
+// Función para mover el dinosaurio hacia abajo
+function DinoMoverAbajo() {
+    if (dinoPosY > sueloY) {
+        dinoPosY -= 10; // Ajusta la velocidad de movimiento vertical aquí
+    }
+}
+
+// Event listener para las teclas "W" (arriba) y "S" (abajo)
+
+
+var touchStartY = null;
+var dinoStartY = sueloY; // Almacenar la posición inicial del dinosaurio
+
+// Event listeners para entrada táctil
+document.addEventListener("touchstart", handleTouchStart);
+document.addEventListener("touchmove", handleTouchMove);
+document.addEventListener("touchend", handleTouchEnd);
+
+function handleTouchStart(event) {
+    touchStartY = event.touches[0].clientY;
+    dinoStartY = dinoPosY; // Guarda la posición inicial del dinosaurio
+}
+
+function handleTouchMove(event) {
+event.preventDefault();
+    if (touchStartY === null) return;
+
+    var touchEndY = event.touches[0].clientY;
+    var deltaY = touchEndY - touchStartY;
+
+    // Limita el movimiento vertical del dinosaurio
+    var newDinoY = dinoStartY + deltaY;
+    if (newDinoY < sueloY) newDinoY = sueloY;
+   
+    if (newDinoY + dino.clientHeight > contenedor.clientHeight) {
+        newDinoY = contenedor.clientHeight - dino.clientHeight;
+    }
+
+    dinoPosY = newDinoY;
+    dino.style.bottom = dinoPosY + "px";
+}
+
+function handleTouchEnd() {
+    touchStartY = null;
+}
+
+
+
+
+function MoverSuelo() {
+    sueloX += CalcularDesplazamiento();
+    suelo.style.left = -(sueloX % contenedor.clientWidth) + "px";
+}
+function MoverTecho() {
+    techoX += CalcularDesplazamiento();
+    techo.style.left = -(techoX % contenedor.clientWidth) + "px";
+}
+
+function CalcularDesplazamiento() {
+    return velEscenario * deltaTime * gameVel;
+}
+
+function Estrellarse() {
+    dino.classList.remove("dino-corriendo");
+    dino.classList.add("dino-estrellado");
+    parado = true;
+}
+
+function DecidirCrearObstaculos() {
+    tiempoHastaObstaculo -= deltaTime;
+    if (tiempoHastaObstaculo <= 0) {
+        CrearObstaculo();
+    }
+}
+function DecidirCrearQuesos() {
+    tiempoHastaQueso -= deltaTime;
+    if (tiempoHastaQueso <= 0) {
+        CrearQueso();
+    }
+}
+
+
+function DecidirCrearNubes() {
+    tiempoHastaNube -= deltaTime;
+    if (tiempoHastaNube <= 0) {
+        CrearNube();
+    }
+}
+
+function CrearObstaculo() {
+    var obstaculo = document.createElement("div");
+    contenedor.appendChild(obstaculo);
+    obstaculo.classList.add("cactus");
+    if (Math.random() > 0.5) obstaculo.classList.add("cactus2");
+    obstaculo.posX = contenedor.clientWidth;
+
+    // Genera una posición vertical aleatoria para el cactus
+    var alturaMinima = 16; // Altura mínima
+    var alturaMaxima = 250; // Altura máxima
+    var posicionVertical = Math.random() * (alturaMaxima - alturaMinima) + alturaMinima;
+    obstaculo.style.bottom = posicionVertical + "px";
+
+    obstaculo.style.left = contenedor.clientWidth + "px";
+    obstaculos.push(obstaculo);
+    tiempoHastaObstaculo = tiempoObstaculoMin + Math.random() * (tiempoObstaculoMax - tiempoObstaculoMin) / gameVel;
+}
+
+
+
+
+
+function CrearQueso() {
+    var queso = document.createElement("div");
+    contenedor.appendChild(queso);
+    queso.classList.add("queso");
+    
+    queso.posX = contenedor.clientWidth;
+
+    var alturaMinima = 16;
+    var alturaMaxima = 250;
+    var posicionVertical = Math.random() * (alturaMaxima - alturaMinima) + alturaMinima;
+    queso.style.bottom = posicionVertical + "px";
+
+    queso.style.left = contenedor.clientWidth + "px";
+    quesos.push(queso); 
+    tiempoHastaQueso = tiempoQuesoMin + Math.random() * (tiempoQuesoMax - tiempoQuesoMin) / gameVel;
+}
+
+function DecidirCrearObstaculos() {
+    tiempoHastaObstaculo -= deltaTime;
+    if (tiempoHastaObstaculo <= 0) {
+        ultimaPosicionObstaculo += 200; // Aumenta la posición X en 200 (ajusta según tus necesidades)
+        CrearObstaculo(ultimaPosicionObstaculo); // Pasa la última posición al crear el obstáculo
+        tiempoHastaObstaculo = tiempoObstaculoMin + Math.random() * (tiempoObstaculoMax - tiempoObstaculoMin) / gameVel;
+    }
+}
+
+function DecidirCrearQuesos() {
+    tiempoHastaQueso -= deltaTime;
+    if (tiempoHastaQueso <= 0) {
+        ultimaPosicionQueso += 200; // Aumenta la posición X en 200 (ajusta según tus necesidades)
+        CrearQueso(ultimaPosicionQueso); // Pasa la última posición al crear el queso
+        tiempoHastaQueso = tiempoQuesoMin + Math.random() * (tiempoQuesoMax - tiempoQuesoMin) / gameVel;
+    }
+}
+
+
+
+
+
+
+function CrearNube() {
+    var nube = document.createElement("div");
+    contenedor.appendChild(nube);
+    nube.classList.add("nube");
+    nube.posX = contenedor.clientWidth;
+    
+    nube.style.left = contenedor.clientWidth + "px";
+
+    // Establece la altura mínima y máxima para las nubes
+    var alturaMinima = 50;  // Ajusta la altura mínima según tus necesidades
+    var alturaMaxima = 190; // Ajusta la altura máxima según tus necesidades
+
+    nube.style.bottom = alturaMinima + Math.random() * (alturaMaxima - alturaMinima) + "px";
+
+    nubes.push(nube);
+    
+    tiempoHastaNube = tiempoNubeMin + Math.random() * (tiempoNubeMax - tiempoNubeMin) / gameVel;
+}
+
+
+function MoverObstaculos() {
+    for (var i = obstaculos.length - 1; i >= 0; i--) {
+        if (obstaculos[i].posX < -obstaculos[i].clientWidth) {
+            obstaculos[i].parentNode.removeChild(obstaculos[i]);
+            obstaculos.splice(i, 1);
+            
+        } else {
+            obstaculos[i].posX -= CalcularDesplazamiento();
+            obstaculos[i].style.left = obstaculos[i].posX + "px";
+        }
+    }
+}
+
+function MoverQuesos() {
+    for (var i = quesos.length - 1; i >= 0; i--) {
+        if (quesos[i].posX < -quesos[i].clientWidth) {
+            quesos[i].parentNode.removeChild(quesos[i]);
+            quesos.splice(i, 1);
+        } else {
+            quesos[i].posX -= CalcularDesplazamiento();
+            quesos[i].style.left = quesos[i].posX + "px";
+        }
+    }
+}
+
+
+
+function MoverNubes() {
+    for (var i = nubes.length - 1; i >= 0; i--) {
+        if (nubes[i].posX < -nubes[i].clientWidth) {
+            nubes[i].parentNode.removeChild(nubes[i]);
+            nubes.splice(i, 1);
+        } else {
+            nubes[i].posX -= CalcularDesplazamiento() * velNube;
+            nubes[i].style.left = nubes[i].posX + "px";
+        }
+    }
+}
+
+
+function GanarPuntos() {
+    if (score % 10 === 0) {  // Aumentar el puntaje de 10 en 10
+        score += 10;
+    }
+    
+    // Formatear el puntaje con ceros a la izquierda sin ningún carácter adicional
+    textoScore.innerText = score.toString().padStart(3, '0');
+    
+    if (score == 80) {
+        gameVel = 1.2;
+        contenedor.classList.add("mediodia");
+    } else if (score == 150) {
+        gameVel = 1.3;
+        contenedor.classList.add("tarde");
+    } else if (score == 200) {
+        gameVel = 1.6;
+        contenedor.classList.add("noche");
+    }
+    suelo.style.animationDuration = (3 / gameVel) + "s";
+    techo.style.animationDuration = (3 / gameVel) + "s";
+}
+function GameOver() {
+    Estrellarse();
+    gameOver.style.display = "block";
+}
+
+function DetectarColision() {
+    for (var i = obstaculos.length - 1; i >= 0; i--) {
+        if (IsCollision(dino, obstaculos[i], 10, 30, 15, 20)) {
+            // Colisión con cactus, el jugador pierde
+            GameOver();
+        }
+    }
+
+    for (var i = quesos.length - 1; i >= 0; i--) {
+        if (IsCollision(dino, quesos[i], 10, 30, 15, 20)) {
+            // El jugador recoge el queso
+            quesos[i].parentNode.removeChild(quesos[i]);
+            quesos.splice(i, 1);
+            GanarPuntos(); 
+            MostrarMensajeQueso();
+            // Opcional: puedes aumentar el puntaje al recoger el queso
+        }
+    }
+}
+
+
+function MostrarMensajeQueso() {
+    const mensajeQueso = document.querySelector(".mensaje-queso");
+    const mensajeAleatorio = elementosHTML[Math.floor(Math.random() * elementosHTML.length)];
+    
+    mensajeQueso.textContent = mensajeAleatorio; // Agregar el mensaje aleatorio al contenido del elemento
+    mensajeQueso.style.display = "block";
+    setTimeout(function () {
+        mensajeQueso.style.display = "none";
+    }, 2000);
+}
+
+// Función para verificar si hay colisión entre dos elementos
+function IsCollision(a, b, paddingTop, paddingRight, paddingBottom, paddingLeft) {
+    var aRect = a.getBoundingClientRect();
+    var bRect = b.getBoundingClientRect();
+
+    return !(
+        ((aRect.top + aRect.height - paddingBottom) < (bRect.top)) ||
+        (aRect.top + paddingTop > (bRect.top + bRect.height)) ||
+        ((aRect.left + aRect.width - paddingRight) < bRect.left) ||
+        (aRect.left + paddingLeft > (bRect.left + bRect.width))
+    );
+}
+
+
+function IsCollision(a, b, paddingTop, paddingRight, paddingBottom, paddingLeft) {
+    var aRect = a.getBoundingClientRect();
+    var bRect = b.getBoundingClientRect();
+
+    return !(
+        ((aRect.top + aRect.height - paddingBottom) < (bRect.top)) ||
+        (aRect.top + paddingTop > (bRect.top + bRect.height)) ||
+        ((aRect.left + aRect.width - paddingRight) < bRect.left) ||
+        (aRect.left + paddingLeft > (bRect.left + bRect.width))
+    );
+}
+
+//****** BOTÓN DE REINICIO ********//
+
+var reiniciarBoton = document.querySelector("#reiniciar");
+reiniciarBoton.addEventListener("click", ReiniciarJuego);
+
+function ReiniciarJuego() {
+    location.reload(); // Recarga la página para reiniciar el juego
+}
+
+
+
+</script>
+</body>
+</html>

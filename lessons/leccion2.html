@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+
+
+
+    <title>Lección 2: Etiquetas y Elementos</title>
+
+</head>
+
+<body>
+    <header>
+        <main class="nave">
+            <nav class="navegacion">
+                <ul>
+                    <img class="btn-menu" id="btn-menu" src="../icons/menu (1).png" alt="menu"></a>
+                    <li><a href="../index.html"><img src="../icons/casa.png" alt="inicio"> Inicio</a></li>
+                    <li><a href="../lessons/lecciones.html"> <img src="../icons/carpeta.png" alt="lecciones">
+                            Lecciones</a></li>
+                    <li><a href="../games/juegos.html"> <img src="../icons/cohete.png" alt="juegos">Juegos</a></li>
+                    <li><a href="../projects/proyectos.html"> <img src="../icons/prueba.png"
+                                alt="proyecto">Proyectos</a>
+                    </li>
+                    <li><a href="../forum/evaluaciones.html"> <img src="../icons/evaluaciones.png"
+                                alt="evaluaciones">Evaluaciones</a>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+        <!-- boton de cerrar el menu -->
+        <div class="menu" id="menu">
+            <img class="close-menu" id="close-menu" img src="../icons/marca.png" alt="cerrar" width="30px"
+                height="30px"></img>
+
+            <ul>
+                <li><a href="../index.html"> <img src="../icons/casaC.png" alt="inicio"> Inicio</a></li>
+                <li><a href="../lessons/lecciones.html"> <img src="../icons/carpetaC.png" alt="lecciones"> Lecciones</a>
+                </li>
+                <li><a href="../games/juegos.html"> <img src="../icons/coheteC.png" alt="juegos">Juegos</a></li>
+                <li><a href="../projects/proyectos.html"> <img src="../icons/pruebaC.png" alt="proyecto"> Proyectos</a>
+                </li>
+                <li><a href="../forum/evaluaciones.html"> <img src="../icons/evaluacionesC.png" alt="evaluaciones">Evaluaciones</a>
+                </li>
+                <li>
+                    <a href="../characters/elementos.html"> <img src="../icons/ideaC.png" alt="pregunta">Conozcamos los
+                        elementos</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </header>
+
+    <main><br><br><br><br><br>
+        <section>
+
+            <h1>Lección 2: Etiquetas y Elementos</h1>
+            <br>
+
+            <h2>¿Qué son las Etiquetas en HTML?</h2>
+            <p>En HTML, utilizamos etiquetas para definir elementos. Las etiquetas son como instrucciones que le dicen
+                al
+                navegador cómo debe mostrar el contenido en la página web. Cada etiqueta tiene un propósito específico.
+            </p>
+        </section>
+
+        <section>
+            <h2>Algunas Etiquetas Básicas</h2>
+            <p>Veamos algunas etiquetas básicas y cómo se utilizan:</p>
+            <ul class="elementos">
+                <li><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>: Encabezados de diferentes tamaños.</li>
+                <li><code>&lt;p&gt;</code>: Párrafos para organizar el texto.</li>
+                <li><code>&lt;a&gt;</code>: Enlaces para conectar páginas y recursos.</li>
+                <li><code>&lt;img&gt;</code>: Imágenes para mostrar gráficos.</li>
+                <li><code>&lt;ul&gt;</code> y <code>&lt;ol&gt;</code>: Listas no ordenadas y ordenadas.</li>
+                <li><code>&lt;li&gt;</code>: Elementos de la lista.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ejemplo de Código HTML</h2>
+            <div class="codigo-container">
+                <div class="codigo-header">
+                    <span>HTML</span>
+
+                    <h4 class="btnCopiar"> <img src="../icons/copy.png" alt="icono Copiar" class="copy"> </h4>
+                </div>
+
+                <pre class="codigo">
+
+
+                <code class="language-html">
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="es"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;Título Principal&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Título Principal&lt;/h1&gt;
+                        &lt;p&gt;Este es un párrafo de texto.&lt;/p&gt;
+                        &lt;a href="https://www.ejemplo.com"&gt;Enlace de Ejemplo&lt;/a&gt;
+                        &lt;img src="imagen.jpg" alt="Descripción de la Imagen"&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Elemento 1&lt;/li&gt;
+                            &lt;li&gt;Elemento 2&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;ol&gt;
+                            &lt;li&gt;Elemento A&lt;/li&gt;
+                            &lt;li&gt;Elemento B&lt;/li&gt;
+                        &lt;/ol&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+            </div>
+        </section>
+    </main>
+
+    <br><br>
+
+    <section>
+        <h1>Practiquemos</h1>
+        <p>Es hora de poner en práctica lo que has aprendido. Crea un documento HTML simple utilizando algunas de las
+            etiquetas que hemos discutido. ¡Diviértete experimentando!</p>
+    </section>
+
+    <section>
+        <h2>Recuerda</h2>
+        <p>
+            Las etiquetas son fundamentales para estructurar y dar formato al contenido de una página web. ¡Sigue
+            explorando y aprendiendo!
+        </p>
+    </section>
+
+    </main>
+    <br>
+
+    <!-- Área de Resultado -->
+    <section id="resultado">
+        <h2>Resultado:</h2>
+        <p>Esta es la forma en la que te debe quedar tu archivo HTML al ejecutarlo</p>
+        <iframe id="preview2" width="100%" height="300"></iframe>
+    </section>
+
+    <script src="../scripts/main.js"></script>
+
+    <footer>
+        <p>&copy; 2023 Programación para Niños</p>
+    </footer>
+</body>
+
+</html>

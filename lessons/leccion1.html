@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <title>Lección 1: Introducción a HTML</title>
+
+
+</head>
+
+<body>
+    <header>
+        <main class="nave">
+
+            <nav class="navegacion">
+                <ul>
+                    <img class="btn-menu" id="btn-menu" src="../icons/menu (1).png" alt="menu"></a>
+                    <li><a href="../index.html"><img src="../icons/casa.png" alt="inicio"> Inicio</a></li>
+                    <li><a href="../lessons/lecciones.html"> <img src="../icons/carpeta.png" alt="lecciones">
+                            Lecciones</a></li>
+                    <li><a href="../games/juegos.html"> <img src="../icons/cohete.png" alt="juegos">Juegos</a></li>
+                    <li><a href="../projects/proyectos.html"> <img src="../icons/prueba.png"
+                                alt="proyecto">Proyectos</a>
+                    </li>
+                    <li><a href="../forum/evaluaciones.html"> <img src="../icons/evaluaciones.png"
+                                alt="evaluaciones">Evaluaciones</a>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+        <!-- boton de cerrar el menu -->
+        <div class="menu" id="menu">
+            <img class="close-menu" id="close-menu" img src="../icons/marca.png" alt="cerrar" width="30px"
+                height="30px"></img>
+
+
+
+            <ul>
+                <li><a href="../index.html"> <img src="../icons/casaC.png" alt="inicio"> Inicio</a></li>
+                <li><a href="../lessons/lecciones.html"> <img src="../icons/carpetaC.png" alt="lecciones"> Lecciones</a>
+                </li>
+                <li><a href="../games/juegos.html"> <img src="../icons/coheteC.png" alt="juegos">Juegos</a></li>
+                <li><a href="../projects/proyectos.html"> <img src="../icons/pruebaC.png" alt="proyecto"> Proyectos</a>
+                </li>
+                <li><a href="../forum/evaluaciones.html"> <img src="../icons/evaluacionesC.png" alt="evaluaciones">Evaluaciones</a>
+                </li>
+                <li>
+                    <a href="../characters/elementos.html"> <img src="../icons/ideaC.png" alt="pregunta">Conozcamos los
+                        elementos</a>
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+
+
+    <main>
+        <section> <br><br><br><br><br>
+            <h1>Lección 1: Introducción a HTML</h1>
+            <br>
+
+            <h2>¿Qué es HTML?</h2>
+            <p>HTML (Lenguaje de Marcado de Hipertexto) es el lenguaje estándar para crear y diseñar páginas web.
+                Permite estructurar el contenido de una página web utilizando una serie de elementos y etiquetas. <b>Es
+                    como el lenguaje que usamos para decirle a una computadora
+                    cómo mostrar información en una página web.</b></p>
+        </section>
+
+        <section>
+            <h2>Elementos Básicos de HTML</h2>
+            <p>En HTML, los elementos se crean utilizando etiquetas. Algunos elementos básicos incluyen:</p>
+            <ul class="elementos">
+                <li><code>&lt;!DOCTYPE html&gt;</code>: Indica la version que usamos de HTML.</li>
+                <li><code>&lt;html&gt;</code>: Define el comienzo y el final del documento HTML.</li>
+                <li><code>&lt;head&gt;</code>: Contiene metadatos, como el título de la página.</li>
+                <li><code>&lt;body&gt;</code>: Contiene el contenido principal de la página.</li>
+                <li><code>&lt;title&gt;</code>: Establece el título de la página que aparecerá en la pestaña del
+                    navegador.
+                </li>
+                <li><code>&lt;h1&gt;</code>: Encabezado principal, en este caso, "¡Hola, Mundo!"</li>
+                <li><code>&lt;p&gt;</code>: Párrafo, utilizado para el texto de la página.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ejemplo de Código HTML</h2>
+            <div class="codigo-container">
+                <div class="codigo-header">
+                    <span>HTML</span>
+                    <h4 class="btnCopiar"> <img src="../icons/copy.png" alt="icono Copiar" class="copy"> </h4>
+
+                </div>
+                <pre class="codigo">
+                <code class="language-html">
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html&gt;
+                        &lt;head&gt;
+                            &lt;title&gt;Mi Primera Página&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;h1&gt;¡Hola, Mundo!&lt;/h1&gt;
+                            &lt;p&gt;Esta es mi primera página web.&lt;/p&gt;
+                        &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+            </div>
+        </section>
+    </main>
+    <br><br>
+
+    <section>
+        <h1>Importante</h1>
+        <p>
+            Esta fue una estructura muy basica, funciona pero aun deblemos conocer mas elementos.
+        </p>
+        <h2>Ahora veremos elementos necesarios para evitar errores.</h2>
+        <ul class="elementos">
+            <li><code>&lt;html lang="es"&gt;</code>: Inicia el documento HTML y define el idioma (en este caso,
+                español).</li>
+            <li><code>&lt;head&gt;</code>: Contiene metadatos, como el título de la página.</li>
+            <li><code>&lt;meta charset="UTF-8"&gt;</code>: Define el conjunto de caracteres a UTF-8 para admitir varios
+                idiomas y símbolos.</li>
+            <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>: Configura la
+                visualización para dispositivos móviles.</li>
+
+        </ul>
+    </section>
+    <section>
+        <h2>Ejemplo de Código HTML</h2>
+
+        <div class="codigo-container">
+            <div class="codigo-header">
+                <span>HTML</span>
+                <h4 class="btnCopiar"> <img src="../icons/copy.png" alt="icono Copiar" class="copy"> </h4>
+
+            </div>
+            <pre class="codigo">
+            <code class="language-html">
+                &lt;!DOCTYPE html&gt;
+                    &lt;html lang="es"&gt;
+                        &lt;head&gt;
+                            &lt;meta charset="UTF-8"&gt;
+                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                            &lt;title&gt;¡Hola, Mundo!&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;h1&gt;¡Hola, Mundo!&lt;/h1&gt;
+                            &lt;p&gt;Esta es nuestra primera página web.&lt;/p&gt;
+                        &lt;/body&gt;
+                    &lt;/html&gt;
+            </code>
+        </pre>
+        </div>
+    </section>
+    </main>
+    <br>
+
+    <!-- Área de Resultado -->
+    <section id="resultado">
+        <h2>Resultado:</h2>
+        <p>Esta es la forma en la que te debe quedar tu archivo HTML al ejecutarlo</p>
+        <iframe id="preview" width="100%" height="300"></iframe>
+    </section>
+
+    <script src="../scripts/main.js"></script>
+
+
+    <footer>
+        <p>&copy; 2023 Programación para Niños</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Juego de Cuadros</title>
+    <style>
+        #lienzoJuego {
+            border: 8px dashed #3026be;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            background-image: url('rata-img/Fondo.png');
+        }
+
+        .mensajeGameOver {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .boton-reiniciar {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .boton-reiniciar:hover {
+            background-color: #45a049;
+        }
+
+        .mensaje {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            background-color: rgba(255, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .mensaje-texto {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .boton {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            font-size: 20px;
+            border: 2px solid #FF0000;
+            border-radius: 10px;
+            padding: 10px 20px;
+        }
+    /*     .fes{
+background-image: url('rata-img/Fondo.png');
+width: 100%;
+height: 600px;
+        } */
+    </style>
+</head>
+<body>
+    <div class="fes">
+        <canvas id="lienzoJuego" class="canvas-border verde" width="1200" height="550"></canvas>
+
+    </div>
+
+    <div class="mensaje" style="display: none;" id="mensajeGameOver">
+        <p class="mensaje-texto">¡Perdiste!</p>
+        <button class="boton" onclick="reiniciarJuego()">Reiniciar</button>
+    </div>
+
+    <div class="mensaje" style="display: none;" id="mensajeSigueAsi">
+        <p class="mensaje-texto">¡Sigue así!</p>
+    </div>
+
+    <div class="mensaje" style="display: none;" id="mensajeGanaste">
+        <p class="mensaje-texto">¡Ganaste!</p>
+        <button class="boton" onclick="reiniciarJuego()">Reiniciar</button> <button class="boton" onclick="volverAlInicio()">Volver al Inicio</button> </div>
+    </div>
+
+    <script>
+        
+        function volverAlInicio() {
+    window.location.href = '../index.html'; // Ruta relativa para regresar al inicio
+}
+
+        const lienzo = document.getElementById('lienzoJuego');
+        const ctx = lienzo.getContext('2d');
+        let posYCuadro = (lienzo.height - 70) / 2;
+        let alturaCuadro = 70;
+        let tamanoCuadro = 120;
+        let puntuacion = 0;
+        let vidas = 3;
+        let juegoDetenido = false;
+        let obstaculos = [];
+
+        const mensajeGameOver = document.getElementById('mensajeGameOver');
+        const mensajeSigueAsi = document.getElementById('mensajeSigueAsi');
+        const mensajeGanaste = document.getElementById('mensajeGanaste');
+
+        const ratagif = new Image();
+        ratagif.src = 'rata-img/Rata.gif';
+
+        function dibujarCuadroUsuario() {
+            ctx.clearRect(0, 0, lienzo.width, lienzo.height);
+            ctx.drawImage(ratagif, 50, posYCuadro, tamanoCuadro, alturaCuadro);
+        }
+
+        function dibujarObstaculos() {
+            for (const obstaculo of obstaculos) {
+                if (obstaculo.color === 'green') {
+                    const rectX = obstaculo.x - 60;
+                    const rectY = obstaculo.y - 20;
+                    const rectWidth = 120;
+                    const rectHeight = 40;
+                    const cornerRadius = 10;
+
+                    ctx.fillStyle = 'lightgreen';
+                    ctx.strokeStyle = 'black';
+                    ctx.lineWidth = 2;
+                    ctx.lineJoin = 'round';
+
+                    ctx.beginPath();
+                    ctx.moveTo(rectX + cornerRadius, rectY);
+                    ctx.lineTo(rectX + rectWidth - cornerRadius, rectY);
+                    ctx.quadraticCurveTo(rectX + rectWidth, rectY, rectX + rectWidth, rectY + cornerRadius);
+                    ctx.lineTo(rectX + rectWidth, rectY + rectHeight - cornerRadius);
+                    ctx.quadraticCurveTo(rectX + rectWidth, rectY + rectHeight, rectX + rectWidth - cornerRadius, rectY + rectHeight);
+                    ctx.lineTo(rectX + cornerRadius, rectY + rectHeight);
+                    ctx.quadraticCurveTo(rectX, rectY + rectHeight, rectX, rectY + rectHeight - cornerRadius);
+                    ctx.lineTo(rectX, rectY + cornerRadius);
+                    ctx.quadraticCurveTo(rectX, rectY, rectX + cornerRadius, rectY);
+                    ctx.closePath();
+
+                    ctx.fill();
+                    ctx.stroke();
+
+                    ctx.font = 'bold 24px Arial';
+                    ctx.fillStyle = 'black';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(obstaculo.texto, obstaculo.x, obstaculo.y);
+                } else if (obstaculo.color === 'red') {
+                    const trampaImg = new Image();
+                    trampaImg.src = 'rata-img/trampa.png';
+                    ctx.drawImage(trampaImg, obstaculo.x, obstaculo.y, 70, 50);
+                }
+            }
+        }
+
+        function dibujarElementosDelJuego() {
+            dibujarCuadroUsuario();
+            dibujarObstaculos();
+        }
+
+        function actualizarJuego() {
+            if (!juegoDetenido) {
+                for (let i = 0; i < obstaculos.length; i++) {
+                    obstaculos[i].x -= 3;
+                    if (obstaculos[i].x + obstaculos[i].tamano < 0) {
+                        obstaculos.splice(i, 1);
+                        i--;
+                    }
+                }
+
+                for (const obstaculo of obstaculos) {
+                    if (
+                        posYCuadro < obstaculo.y + obstaculo.tamano &&
+                        posYCuadro + alturaCuadro > obstaculo.y &&
+                        50 < obstaculo.x + obstaculo.tamano &&
+                        50 + tamanoCuadro > obstaculo.x
+                    ) {
+                        if (obstaculo.color === 'red') {
+                            vidas--;
+                            if (vidas <= 0) {
+                                juegoDetenido = true;
+                                mensajeGameOver.style.display = 'block';
+                            }
+                        } else if (obstaculo.color === 'green') {
+                            manejarCuadroBueno();
+                            obstaculos.splice(obstaculos.indexOf(obstaculo), 1);
+                        }
+                    }
+                }
+
+                ctx.clearRect(0, 0, lienzo.width, lienzo.height);
+                dibujarCuadroUsuario();
+                dibujarObstaculos();
+                ctx.font = '20px Arial';
+                ctx.fillStyle = 'black';
+                ctx.fillText(`Puntuación: ${puntuacion}`, 10, 20);
+
+                if (puntuacion >= 360) {
+                    juegoDetenido = true;
+                    mensajeGanaste.style.display = 'block';
+                } else {
+                    requestAnimationFrame(actualizarJuego);
+                }
+            }
+        }
+
+        function generarObstaculos() {
+            if (!juegoDetenido) {
+                const posYAleatoria = Math.floor(Math.random() * (lienzo.height - 30));
+                const espacioSeguro = 100;
+                const probabilidadVerde = Math.random();
+                let tamano = 30;
+                let color = 'red';
+
+                if (probabilidadVerde < 0.5) {
+                    tamano = 60;
+                    color = 'green';
+                    const texto = elementosHTML[Math.floor(Math.random() * elementosHTML.length)];
+                    obstaculos.push({ x: lienzo.width, y: posYAleatoria, color, tamano, texto });
+                } else {
+                    obstaculos.push({ x: lienzo.width, y: posYAleatoria, color, tamano });
+                }
+
+                if (obstaculos.length === 0 || obstaculos[obstaculos.length - 1].x <= lienzo.width - espacioSeguro) {
+                    obstaculos.push({ x: lienzo.width, y: posYAleatoria, color, tamano });
+                }
+            }
+        }
+
+        function reiniciarJuego() {
+            juegoDetenido = false;
+            puntuacion = 0;
+            vidas = 3;
+            alturaCuadro = 70;
+            anchoCuadro = 20;
+            tamanoCuadro = 120;
+            obstaculos = [];
+            mensajeGameOver.style.display = 'none';
+            mensajeSigueAsi.style.display = 'none';
+            mensajeGanaste.style.display = 'none';
+            actualizarJuego();
+        }
+
+        function manejarCuadroBueno() {
+            const crecimientoIncremental = 2;
+            const objetivoTamano = 100;
+
+            if (tamanoCuadro < objetivoTamano) {
+                tamanoCuadro += crecimientoIncremental;
+                alturaCuadro += crecimientoIncremental;
+            }
+
+            puntuacion += 10;
+            mensajeSigueAsi.style.display = 'block';
+            setTimeout(() => {
+                mensajeSigueAsi.style.display = 'none';
+            }, 1000);
+        }
+
+        function manejarEntrada(evento) {
+            if (evento.type === 'keydown') {
+                if (evento.key === 'ArrowUp' && posYCuadro > 0) {
+                    posYCuadro -= 15;
+                } else if (evento.key === 'ArrowDown' && posYCuadro + alturaCuadro < lienzo.height) {
+                    posYCuadro += 15;
+                }
+            } else if (evento.type === 'touchstart') {
+                posYInicioToque = evento.touches[0].clientY;
+            } else if (evento.type === 'touchmove' && posYInicioToque !== null) {
+                const posYFinToque = evento.touches[0].clientY;
+                const desplazamientoY = posYFinToque - posYInicioToque;
+                if (Math.abs(desplazamientoY) > 10) {
+                    posYCuadro += desplazamientoY / Math.abs(desplazamientoY) * 10;
+                    if (posYCuadro < 0) posYCuadro = 0;
+                    if (posYCuadro + alturaCuadro > lienzo.height) posYCuadro = lienzo.height - alturaCuadro;
+                }
+                posYInicioToque = posYFinToque;
+            }
+        }
+
+        document.addEventListener('keydown', manejarEntrada);
+        lienzo.addEventListener('touchstart', manejarEntrada);
+        lienzo.addEventListener('touchmove', manejarEntrada);
+        lienzo.addEventListener('touchend', () => posYInicioToque = null);
+
+        const elementosHTML = [
+            '<h1>',
+            '<body>',
+            '<html>',
+            '<p>',
+            '<a>',
+            '<div>',
+            '<span>',
+            '<ul>',
+            '<li>',
+            '<strong>',
+            '<em>',
+            '<button>',
+            '<form>',
+            '<input>',
+            '<table>',
+            '<tr>',
+            '<td>',
+            '<img>',
+        ];
+
+        setInterval(generarObstaculos, 3000);
+
+        actualizarJuego();
+        
+    </script>
+</body>
+</html>
