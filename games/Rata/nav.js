@@ -19,9 +19,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-const fullscreenButton = document.getElementById("fullscreen-button");
 
-fullscreenButton.addEventListener("click", () => {
+
+
+function activarPantallaCompleta() {
+    const element = document.documentElement; // El elemento raíz de la página
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+    }
+}
+
+// Llama a activarPantallaCompleta cuando sea necesario (por ejemplo, al cargar la página).
+activarPantallaCompleta();
+/* 
+function activarPantallaCompleta() {
     if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
     } else if (document.documentElement.mozRequestFullScreen) {
@@ -31,7 +49,11 @@ fullscreenButton.addEventListener("click", () => {
     } else if (document.documentElement.msRequestFullscreen) {
         document.documentElement.msRequestFullscreen();
     }
-});
+}
+
+const fullscreenButton = document.getElementById("fullscreen-button");
+
+fullscreenButton.addEventListener("click", activarPantallaCompleta);
 
 document.addEventListener("fullscreenchange", () => {
     if (document.fullscreenElement) {
@@ -47,3 +69,8 @@ document.addEventListener("fullscreenchange", () => {
         console.log("Modo pantalla completa desactivado");
     }
 });
+
+
+
+// Llamas a activarPantallaCompleta después de reiniciar el juego
+ */

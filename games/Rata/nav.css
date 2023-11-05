@@ -219,6 +219,8 @@ body {
 .porq {
   width: 70px;
   height: 70px;
+  z-index: 60;
+  margin-top: 60px;
 
   /*  margin-top: 0;
   margin-bottom: 15px;
@@ -227,4 +229,18 @@ body {
   border-radius: 15px;
   border: 3px outset rgb(105, 82, 236);
   background-color: rgb(105, 82, 236); */
+}
+.porq {
+  width: 22px;
+  height: 22px;
+  position: static;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+
+  background: #ffffff54;
+  border-radius: 9px;
+  border: 3px black solid;
+  background: url(../../icons/pantalla-completa.png) no-repeat;
+  background-size: 20px 20px;
 }
