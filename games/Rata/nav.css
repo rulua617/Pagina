@@ -47,18 +47,6 @@ nav ul li a {
   height: auto;
 }
 
-.btn-menu {
-  width: 40px;
-
-  margin-top: 0;
-  margin-bottom: 15px;
-
-  padding: 18px 17px;
-  border-radius: 15px;
-  border: 3px outset rgb(105, 82, 236);
-  background-color: rgb(105, 82, 236);
-}
-
 .btn-menu:hover {
   background-color: #cfa32a;
 }
@@ -216,4 +204,27 @@ nav ul li a {
 }
 body {
   font-family: monospace;
+}
+.btn-menu {
+  width: 40px;
+
+  margin-top: 0;
+  margin-bottom: 15px;
+
+  padding: 18px 17px;
+  border-radius: 15px;
+  border: 3px outset rgb(105, 82, 236);
+  background-color: rgb(105, 82, 236);
+}
+.porq {
+  width: 70px;
+  height: 70px;
+
+  /*  margin-top: 0;
+  margin-bottom: 15px;
+
+  padding: 18px 17px;
+  border-radius: 15px;
+  border: 3px outset rgb(105, 82, 236);
+  background-color: rgb(105, 82, 236); */
 }

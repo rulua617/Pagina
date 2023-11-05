@@ -19,3 +19,31 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+const fullscreenButton = document.getElementById("fullscreen-button");
+
+fullscreenButton.addEventListener("click", () => {
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+        document.documentElement.msRequestFullscreen();
+    }
+});
+
+document.addEventListener("fullscreenchange", () => {
+    if (document.fullscreenElement) {
+        fullscreenButton.style.display = "none";
+    } else {
+        fullscreenButton.style.display = "block";
+    }
+});
+
+// Para salir del modo de pantalla completa
+document.addEventListener("fullscreenchange", () => {
+    if (!document.fullscreenElement) {
+        console.log("Modo pantalla completa desactivado");
+    }
+});
