@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <title>Rata🐀</title>
+    <title>Rata🐀 CSS</title>
     <link rel="stylesheet" href="nav.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
@@ -14,7 +14,7 @@
 
         body {
             height: 97vh;
-            background-image: linear-gradient(#31ff80a5, #e4641a);
+            background-image: linear-gradient(#3146ffa5, #cc1ae4);
             display: flex;
             align-items: center;
         }
@@ -33,7 +33,7 @@
             background-size: 520px 330px;
             overflow: hidden;
             background-position-x: 0px;
-            border: #525151 3px solid;
+            border: #3ab65f 5px double;
             padding: 20px;
             border-radius: 12px
         }
@@ -409,26 +409,28 @@
         var delay = 3;
         var techo;
         var personajeVivo = true;
-        const elementosHTML = [
-            '<h1>',
-            '<body>',
-            '<html>',
-            '<p>',
-            '<a>',
-            '<div>',
-            '<span>',
-            '<ul>',
-            '<li>',
-            '<strong>',
-            '<em>',
-            '<button>',
-            '<form>',
-            '<input>',
-            '<table>',
-            '<tr>',
-            '<td>',
-            '<img>',
+        const elementosCSS = [
+            ':active',
+            ':checked',
+            ':disabled',
+            ':empty',
+            ':enabled',
+            ':first-child',
+            ':first-of-type',
+            ':focus',
+            ':hover',
+            ':last-child',
+            ':last-of-type',
+            ':not(selector)',
+            ':nth-child(n)',
+            ':nth-last-child(n)',
+            ':nth-last-of-type(n)',
+            ':nth-of-type(n)',
+            ':only-child',
+            ':only-of-type',
+            ':target',
         ];
+
 
         function Estrellarse() {
             dino.classList.remove("dino-corriendo");
@@ -706,7 +708,7 @@
 
         function MostrarMensajeQueso() {
             const mensajeQueso = document.querySelector(".mensaje-queso");
-            const mensajeAleatorio = elementosHTML[Math.floor(Math.random() * elementosHTML.length)];
+            const mensajeAleatorio = elementosCSS[Math.floor(Math.random() * elementosCSS.length)];
             mensajeQueso.textContent = mensajeAleatorio;
             mensajeQueso.style.display = "block";
             setTimeout(function () {

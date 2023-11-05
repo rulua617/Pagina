@@ -1,0 +1,50 @@
+/* main */
+.juegopadre {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.juegopadre a {
+  text-decoration: none;
+}
+/* div */
+.juegoi {
+  background-color: rgb(166, 147, 250);
+  border-radius: 30px;
+  text-align: center;
+  padding: 15px 5px 15px 5px;
+  border: outset 9px rgb(43, 146, 98);
+}
+/* .uno {
+  background-image: url(../juegos-img/juego1.PNG) no-repeat;
+}
+.uno:hover {
+  scale: 1.2;
+} */
+
+.juegoi img {
+  border-radius: 25px;
+  height: 80%;
+  width: 80%;
+
+  width: 90%;
+  height: 90%;
+}
+.juegoi h6 {
+  font-size: 19px;
+  background-color: aliceblue;
+  width: 98%;
+  color: #4d33a0;
+  padding: 5px;
+  border-radius: 30px;
+  margin: 5px;
+  margin-left: 0;
+  border: 3px outset #6e4ae1;
+}
+.juegoi img:hover {
+  scale: 1.2;
+}
+.juegoi h6:hover {
+  color: rgb(218, 8, 8);
+  border: 3px outset rgb(218, 8, 8);
+}
