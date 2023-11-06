@@ -551,7 +551,7 @@ button {
     box-shadow: none; */
     opacity: 1;
     transition: opacity 1s;
-    height: 150px;
+    
     animation: desvanecido 1.7s ease-in-out forwards;
   }
   /*   header:hover {
