@@ -100,23 +100,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-/* seccion de botones-elementos html y css */
-
-document.addEventListener('DOMContentLoaded', function () {
-    const popUp=document.getElementById('popUp');
-    popUp.style.display='none';
-});
-const popUp = document.getElementById('popUp');
-const contenidoPopUp = document.getElementById('contenidoPopUp');
-const textoPopUp = document.getElementById('textoPopUp');
-popUp.style.display='none'
-
-function mostrarPopUp(texto) {
-    textoPopUp.innerText = texto;
-    popUp.style.display = 'flex';
-}
-
-
-function cerrarPopUp() {
-    popUp.style.display = 'none';
-}

@@ -24,6 +24,14 @@
             align-items: center;
         }
 
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         .game-over .contenedor {
             animation: none;
         }
@@ -254,7 +262,7 @@
 
             .game-over {
                 height: 50%;
-                width: 97.5%;
+                width: 100%;
             }
 
             #reiniciar {
@@ -267,6 +275,13 @@
                 height: 94vh;
             }
 
+        }
+
+        @media screen and (max-width: 896px) {
+            .game-over {
+
+                width: 100%;
+            }
         }
     </style>
 </head>

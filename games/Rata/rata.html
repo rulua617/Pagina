@@ -23,6 +23,14 @@
             align-items: center;
         }
 
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         .game-over .contenedor {
             animation: none;
         }
@@ -194,6 +202,13 @@
 
             to {
                 background-position-x: -252px;
+            }
+        }
+
+        @media screen and (max-width: 896px) {
+            .game-over {
+
+                width: 100%;
             }
         }
 

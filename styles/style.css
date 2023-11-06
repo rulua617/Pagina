@@ -25,7 +25,7 @@ header {
   padding: 15px 20px;
   width: 100%;
   left: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
 }
 
@@ -420,8 +420,8 @@ p:not(footer p) {
   left: 0;
   width: 100%;
   height: 100%;
-  /*  background: rgba(0, 0, 0, 0.7); */
-  background-image: url("../characters/personaje1.png");
+  background: rgba(0, 0, 0, 0.7);
+  background-image: url("../characters/Dehecho.png");
   background-repeat: no-repeat;
   background-size: 500px 500px;
   background-position: right bottom;
@@ -545,11 +545,48 @@ button {
   /*   nav ul li:nth-child(6){
   display: block;
       } */
+  header {
+    /*   background: none;
+    border: none;
+    box-shadow: none; */
+    opacity: 1;
+    transition: opacity 1s;
+    height: 150px;
+    animation: desvanecido 1.7s ease-in-out forwards;
+  }
+  /*   header:hover {
+    opacity: 0;
+  }
+  .btn-menu {
+    animation: desvanecido 1.7s ease-in-out forwards;
+  }
+
+  @keyframes desvanecido {
+    /*  from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    } */
+  /*   100% {
+      opacity: 0%;
+      transform: translateY(100px);
+    }
+    0% {
+      opacity: 100%;
+      transform: translateY(0);
+    }
+  } */
   .btn-menu {
     display: block;
     background-color: none;
-    border: none;
+
+    position: fixed;
+    z-index: 1000;
+    top: 20px;
+    left: 15px;
   }
+
   .menu {
     position: fixed;
     top: 0;
