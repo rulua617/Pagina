@@ -542,50 +542,8 @@ button {
   nav ul li:nth-child(n + 4) {
     display: none;
   }
-  /*   nav ul li:nth-child(6){
-  display: block;
-      } */
-  header {
-    /*   background: none;
-    border: none;
-    box-shadow: none; */
-    opacity: 1;
-    transition: opacity 1s;
-    
-    animation: desvanecido 1.7s ease-in-out forwards;
-  }
-  /*   header:hover {
-    opacity: 0;
-  }
-  .btn-menu {
-    animation: desvanecido 1.7s ease-in-out forwards;
-  }
-
-  @keyframes desvanecido {
-    /*  from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    } */
-  /*   100% {
-      opacity: 0%;
-      transform: translateY(100px);
-    }
-    0% {
-      opacity: 100%;
-      transform: translateY(0);
-    }
-  } */
-  .btn-menu {
-    display: block;
-    background-color: none;
-
-    position: fixed;
-    z-index: 1000;
-    top: 20px;
-    left: 15px;
-  }
+  
+   
 
   .menu {
     position: fixed;
