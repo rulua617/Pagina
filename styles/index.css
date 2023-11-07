@@ -1,0 +1,67 @@
+.fondoindex {
+  padding: 30px;
+  border-radius: 20px;
+  border: rgb(86, 25, 207) 9px;
+  border-style: groove;
+
+  background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      #ffcc00 10px,
+      #ffcc00 20px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      #ffcc00 10px,
+      #ffcc00 20px
+    );
+  background-size: 100% 100%;
+  background-repeat: repeat;
+  /* 
+  background-image: radial-gradient(
+    circle,
+    deeppink 0% 15%,
+
+    indigo 55%
+  ); */
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-size: 100% 100%;
+  }
+  100% {
+    background-size: 120% 120%;
+  }
+}
+.divindex {
+}
+
+.bn {
+  background-color: rgba(240, 248, 255, 0.76);
+  border-style: double double groove groove;
+}
+.txt p {
+  border-style: double double groove groove;
+}
+.vamos_comenzar {
+  background-color: rgba(78, 173, 255, 0.76);
+  border-style: double double groove groove;
+  color: rgb(221, 0, 0);
+  font-size: 30px;
+}
+.vamos_comenzar:hover {
+  scale: 1.2;
+  background-color: #ffcc00;
+}
+.lecciones {
+}
+.juegos {
+}
+.proyectos {
+}
+.evaluaciones {
+}
