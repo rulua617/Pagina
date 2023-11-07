@@ -545,7 +545,15 @@ button {
   /*   nav ul li:nth-child(6){
   display: block;
       } */
-
+  header {
+    /*   background: none;
+    border: none;
+    box-shadow: none; */
+    opacity: 1;
+    transition: opacity 1s;
+    height: 150px;
+    animation: desvanecido 1.7s ease-in-out forwards;
+  }
   /*   header:hover {
     opacity: 0;
   }
@@ -569,14 +577,15 @@ button {
       transform: translateY(0);
     }
   } */
-  /* .btn-menu {
+  .btn-menu {
     display: block;
-    background-color: none; */
+    background-color: none;
 
-  /*  position: fixed;
+    position: fixed;
     z-index: 1000;
     top: 20px;
-    left: 15px; */
+    left: 15px;
+  }
 
   .menu {
     position: fixed;
