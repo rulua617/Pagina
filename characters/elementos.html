@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
-
+    <link rel="stylesheet" href="../styles/busqueda.css">
 
     <title>Juegos</title>
 
@@ -18,7 +18,13 @@
 
             <nav class="navegacion">
                 <ul>
+
                     <img class="btn-menu" id="btn-menu" src="../icons/menu (1).png" alt="menu"></a>
+                    <div class="busqueda">
+                        <input id="search" type="text" placeholder="Buscar">
+                        <img src="../icons/buscar.png" alt="lupa">
+                        <i class="bus queda"></i>
+                    </div>
                     <li><a href="../index.html"><img src="../icons/casa.png" alt="inicio"> Inicio</a></li>
                     <li><a href="../lessons/lecciones.html"> <img src="../icons/carpeta.png" alt="lecciones">
                             Lecciones</a></li>
@@ -36,7 +42,6 @@
         <div class="menu" id="menu">
             <img class="close-menu" id="close-menu" img src="../icons/marca.png" alt="cerrar" width="30px"
                 height="30px"></img>
-
 
 
             <ul>
@@ -59,13 +64,16 @@
             </ul>
         </div>
     </header><br><br><br><br><br>
+
+
+
     <h1>
         Aqui conoceras la funcion de casi todos los elemtos de HTML y CSS
     </h1>
     <p>Solo has click sobre el elemnto que deseas conocer y te aparecera una pequña ventana emergente </p>
 
 
-    <div class="fin">
+    <div class="fin" id="contpadre">
 
 
         <div class="contenedor">
@@ -73,7 +81,8 @@
             <p id="boton1" class="boton" onclick="mostrarPopUp('Define párrafos de texto en tu página web.')">&lt;p&gt;
             </p>
             <p id="boton2" class="boton"
-                onclick="mostrarPopUp('Crea títulos de primer nivel para encabezados principales.')">&lt;h1&gt;</p>
+                onclick="mostrarPopUp('Crea títulos de primer nivel para encabezados principalees, tambien hay veriones para subtitulos como: h2, h3, h4, h5 y h6 ; estos son todos los enacbezados  y tendran un tamaño mas pequeño entre mayor sea el numero')">
+                &lt;h1&gt;</p>
             <p id="boton3" class="boton"
                 onclick="mostrarPopUp('Permite crear enlaces hipertexto a otras páginas o recursos.')">&lt;a&gt;</p>
         </div>
@@ -94,23 +103,7 @@
             <p id="boton9" class="boton" onclick="mostrarPopUp('Celdas de datos en una tabla.')">&lt;td&gt;</p>
 
         </div>
-        <div class="contenedor">
-            <h2>Elementos de Formularios</h2>
-            <p id="boton10" class="boton"
-                onclick="mostrarPopUp('Define formularios para la entrada de datos del usuario.')">&lt;form&gt;</p>
-            <p id="boton11" class="boton" onclick="mostrarPopUp('Crea campos de entrada de datos en formularios.')">
-                &lt;input&gt;</p>
-            <p id="boton12" class="boton" onclick="mostrarPopUp('Agrega botones de acción en formularios.')">
-                &lt;button&gt;
-            </p>
-            <p id="boton13" class="boton" onclick="mostrarPopUp('Etiquetas para campos de formulario.')">&lt;label&gt;
-            </p>
-            <p id="boton14" class="boton" onclick="mostrarPopUp('Crea listas desplegables para seleccionar opciones.')">
-                &lt;select&gt;</p>
-            <p id="boton15" class="boton" onclick="mostrarPopUp('Áreas de texto para ingreso de texto extenso.')">
-                &lt;textarea&gt;</p>
 
-        </div>
         <div class="contenedor">
             <h2>Elementos Multimedia</h2>
             <p id="boton16" class="boton" onclick="mostrarPopUp('Inserta imágenes en tu página web.')">&lt;img&gt;</p>
@@ -124,7 +117,7 @@
                 &lt;figure&gt;</p>
         </div>
         <div class="contenedor">
-            <h2>Grupo de Documento</h2>
+            <h2>Elementos principales</h2>
             <p id="boton20" class="boton" onclick="mostrarPopUp('El elemento raíz del documento HTML.')">&lt;html&gt;
             </p>
             <p id="boton21" class="boton" onclick="mostrarPopUp('Contiene metadatos y enlaces a recursos.')">
@@ -132,36 +125,23 @@
             </p>
             <p id="boton22" class="boton" onclick="mostrarPopUp('Define el título de la página en el navegador.')">
                 &lt;title&gt;</p>
-        </div>
-
-        <div class="contenedor">
-
-            <h2>Contenido Principal</h2>
             <p id="boton23" class="boton"
                 onclick="mostrarPopUp('Contiene el contenido principal visible en la página.')">
                 &lt;body&gt;</p>
-
         </div>
 
 
+
+
+
         <div class="contenedor">
-
-
-            <h2>Secciones Temáticas</h2>
-            <p id="boton24" class="boton" onclick="mostrarPopUp('Define una sección temática en el contenido.')">
-                &lt;section&gt;</p>
-            <p id="boton25" class="boton" onclick="mostrarPopUp('Define un contenido autónomo y autocontenido.')">
-                &lt;article&gt;</p>
-
-        </div>
-        <div class="contenedor">
-            <h2>Secciones Temáticas (Continuación)</h2>
+            <h2>Secciones Temáticas </h2>
             <p id="boton25" class="boton" onclick="mostrarPopUp('Define un contenido autónomo y autocontenido.')">
                 &lt;article&gt;</p>
             <p id="boton26" class="boton"
                 onclick="mostrarPopUp('Agrupa contenido relacionado y subordinado en una página.')">&lt;aside&gt;</p>
-            <p id="boton27" class="boton" onclick="mostrarPopUp('Define bloques de texto citado de otra fuente.')">
-                &lt;blockquote&gt;</p>
+            <p id="boton24" class="boton" onclick="mostrarPopUp('Define una sección temática en el contenido.')">
+                &lt;section&gt;</p>
             <p id="boton28" class="boton"
                 onclick="mostrarPopUp('Crea líneas de código o fragmentos de código fuente.')">
                 &lt;code&gt;</p>
@@ -223,10 +203,21 @@
             <p id="boton55" class="boton" onclick="mostrarPopUp('Elemento de imagen con mapa de imagen.')">&lt;area&gt;
             </p>
         </div>
-
-
         <div class="contenedor">
-            <h2>Elementos de Formularios (Continuación)</h2>
+            <h2>Elementos de Formularios</h2>
+            <p id="boton10" class="boton"
+                onclick="mostrarPopUp('Define formularios para la entrada de datos del usuario.')">&lt;form&gt;</p>
+            <p id="boton11" class="boton" onclick="mostrarPopUp('Crea campos de entrada de datos en formularios.')">
+                &lt;input&gt;</p>
+            <p id="boton12" class="boton" onclick="mostrarPopUp('Agrega botones de acción en formularios.')">
+                &lt;button&gt;
+            </p>
+            <p id="boton13" class="boton" onclick="mostrarPopUp('Etiquetas para campos de formulario.')">&lt;label&gt;
+            </p>
+            <p id="boton14" class="boton" onclick="mostrarPopUp('Crea listas desplegables para seleccionar opciones.')">
+                &lt;select&gt;</p>
+            <p id="boton15" class="boton" onclick="mostrarPopUp('Áreas de texto para ingreso de texto extenso.')">
+                &lt;textarea&gt;</p>
             <p id="boton56" class="boton" onclick="mostrarPopUp('Define un botón de restablecer en un formulario.')">
                 &lt;reset&gt;</p>
             <p id="boton57" class="boton"
@@ -238,7 +229,9 @@
                 &lt;submit&gt;</p>
             <p id="boton60" class="boton" onclick="mostrarPopUp('Elemento de botón en un formulario.')">&lt;button&gt;
             </p>
+
         </div>
+
     </div>
 
 

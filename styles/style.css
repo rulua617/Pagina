@@ -231,10 +231,10 @@ nav ul li a {
 }
 
 .btn-menu {
-  width: 40px;
+  width: 35px;
+  height: 30px;
 
   margin-top: 0;
-  margin-bottom: 15px;
 
   padding: 18px 17px;
   border-radius: 15px;
@@ -421,9 +421,8 @@ p:not(footer p) {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
-  background-image: url("../characters/Dehecho.png");
   background-repeat: no-repeat;
-  background-size: 500px 500px;
+  background-size: 300px 400px;
   background-position: right bottom;
   display: flex;
   align-items: center;
@@ -545,8 +544,6 @@ button {
   /*   nav ul li:nth-child(6){
   display: block;
       } */
-  
-  
 
   .menu {
     position: fixed;
@@ -575,7 +572,6 @@ button {
   /*   nav ul li:nth-child(6){
   display: block;
       } */
-  
 
   .navegacion a {
     margin: 0px 7px;
