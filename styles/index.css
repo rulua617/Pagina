@@ -51,11 +51,17 @@
   background-color: rgba(78, 173, 255, 0.76);
   border-style: double double groove groove;
   color: rgb(221, 0, 0);
-  font-size: 30px;
+  font-style: normal;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
 }
 .vamos_comenzar:hover {
   scale: 1.2;
   background-color: #ffcc00;
+}
+.inicio {
+  align-items: center;
 }
 .lecciones {
 }
@@ -64,4 +70,10 @@
 .proyectos {
 }
 .evaluaciones {
+}
+.txt {
+}
+.div-logo {
+  border-radius: 50%;
+  background-image: radial-gradient(circle, deeppink 15% 35%, indigo 55%);
 }

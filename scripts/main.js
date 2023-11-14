@@ -100,3 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+/* btn hamburguesa */
+/* const Hmenu =document.querySelector('.btn-hamburguesa');
+Hmenu.addEventListener('click',()=>{
+    Hmenu.classList.toggle("active");
+}) */

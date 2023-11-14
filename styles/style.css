@@ -1,3 +1,23 @@
+body {
+  font-family: "Comic Sans MS";
+  /*  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+} */
+  /* main {
+  flex: 1;
+} */
+}
+body:not(.menu) {
+  font-family: "Comic Sans MS";
+  padding: 20px;
+  margin: 20px;
+  margin-bottom: 0px;
+
+  /*   background: linear-gradient(to left,#8e84f5,  #c8cafd,   #6e4ae1)  */
+  background: #7d67ed;
+}
+
 h1 {
   text-align: center;
   border-radius: 9px;
@@ -98,19 +118,6 @@ pre code {
 #preview {
   border: 3px solid #cfa32a;
   border-radius: 12px;
-}
-
-body {
-  font-family: "Comic Sans MS", monospace, sans-serif;
-}
-body:not(.menu) {
-  font-family: "Comic Sans MS", monospace, sans-serif;
-  padding: 20px;
-  margin: 20px;
-  margin-bottom: 0px;
-
-  /*   background: linear-gradient(to left,#8e84f5,  #c8cafd,   #6e4ae1)  */
-  background: #7d67ed;
 }
 
 .elementos {
@@ -503,6 +510,24 @@ button {
 .resultado {
   text-align: center;
 }
+
+.logo {
+  height: 500px;
+}
+.div-logo {
+  width: 80%;
+
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header + * {
+  margin-top: 100px;
+}
 @media only screen and (max-width: 1350px) {
   nav ul li:nth-child(n + 6) {
     display: none;
@@ -541,9 +566,38 @@ button {
   nav ul li:nth-child(n + 4) {
     display: none;
   }
+  .logo {
+    height: 210px;
+  }
+  .div-logo {
+    height: 25%;
+  }
+
   /*   nav ul li:nth-child(6){
   display: block;
       } */
+  header {
+    height: 80px;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+  }
+  header + * {
+    margin-top: 60px;
+  }
+  .btn-menu {
+    display: block;
+    border: none;
+    width: 30px;
+    height: 30px;
+
+    margin: 4px;
+    padding: 12px;
+  }
+
+  .br br:nth-child(-n + 3) {
+    display: none;
+  }
 
   .menu {
     position: fixed;
@@ -617,3 +671,46 @@ h2 {
 h3 {
   font-size: clamp(16px, 2.7vw, 19px);
 }
+
+/* .btn-hamburguesa {
+  height: 30px;
+  width: 30px;
+
+  position: relative;
+}
+
+.btn-hamburguesa span {
+  height: 5px;
+  width: 70%;
+  
+  border: #000 3px solid;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+}
+
+.btn-hamburguesa span:nth-child(1) {
+  top: 25%;
+}
+
+.btn-hamburguesa span:nth-child(3) {
+  top: 75%;
+} */
+
+/* .btn-hamburguesa.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.btn-hamburguesa.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.btn-hamburguesa.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+ */
