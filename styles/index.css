@@ -61,7 +61,6 @@
   background-color: #ffcc00;
 }
 .inicio {
-  align-items: center;
 }
 .lecciones {
 }
@@ -72,6 +71,8 @@
 .evaluaciones {
 }
 .txt {
+  display: grid;
+  place-items: center;
 }
 .div-logo {
   border-radius: 50%;

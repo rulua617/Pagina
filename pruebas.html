@@ -1,79 +1,271 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="theme-color" content=" #5e3cc6 ">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Programación para Niñoss</title>
 </head>
 <style>
-    nav {
-        background-color: #7c4242;
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+
     }
 
-    .btn-hamburguesa {
-        height: 40px;
-        width: 40px;
+    :root {
+        --bgColor: rgb(197, 175, 175);
+    }
+
+    body {
+
+        background: var(--bgColor);
+        user-select: none;
+    }
+
+    #slider {
         position: relative;
-
+        width: 50%;
+        height: 30vw;
+        margin: 80px auto;
+        transform-style: preserve-3d;
+        perspective: 1400px;
     }
 
-    .btn-hamburguesa span {
-        height: 5px;
-        width: 100%;
-        background-color: rgb(105, 82, 236);
-        /*   background-color: #000; */
-        border-radius: 25px;
-        position: absolute;
-        top: 50%;
+    input[type="radio"] {
+        position: relative;
+        top: 108%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        transition: 0.3s ease;
+        width: 18px;
+        height: 18px;
+        margin: 0 15px 0 0;
+        transform: translate(-83px);
+        cursor: pointer;
+        opacity: 0.4;
+
     }
 
-    .btn-hamburguesa span:nth-child(1) {
-        top: 25%;
+    input[type="radio"]:nth-child(5) {
+        margin-right: 0px;
     }
 
-    .btn-hamburguesa span:nth-child(3) {
-        top: 75%;
-    }
+    input[type="radio"]:checked {
+        opacity: 1;
 
-    .btn-hamburguesa.active span:nth-child(1) {
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
-
-    .btn-hamburguesa.active span:nth-child(2) {
-        opacity: 0;
     }
 
 
+    #slider label,
+    #slider label img {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        color: white;
+        font-size: 70px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 400ms ease;
 
 
-    .btn-hamburguesa.active span:nth-child(3) {
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
     }
+
+    #s1:checked~#slide1,
 </style>
 
 <body>
-    <nav>
-        <div class="btn-hamburguesa">
-            <span></span>
-            <span></span>
-            <span></span>
+    <header>
+        <main class="nave">
+
+            <nav class="navegacion">
+
+                <ul>
+                    <img class="btn-menu" id="btn-menu" src="icons/menu (1).png" alt="menu"></a>
+
+                    <!-- <div class="btn-hamburguesa btn-menu " id="btn-menu">
+                        <span id="btn-menu"></span>
+                        <span id="btn-menu"></span>
+                        <span id="btn-menu"></span>
+
+                    </div> -->
+
+                    <li><a href="index.html"> <img src="icons/casa.png" alt="inicio"> Inicio</a></li>
+                    <li><a href="lessons/lecciones.html"> <img src="icons/carpeta.png" alt="lecciones"> Lecciones</a>
+                    </li>
+                    <li><a href="games/juegos.html"> <img src="icons/cohete.png" alt="juegos">Juegos</a></li>
+                    <li><a href="projects/proyectos.html"> <img src="icons/prueba.png" alt="proyecto"> Proyectos</a>
+                    </li>
+                    <li><a href="forum/evaluaciones.html"> <img src="icons/evaluaciones.png"
+                                alt="evaluaciones">Evaluaciones</a>
+                    </li>
+
+
+                </ul>
+
+
+
+
+
+            </nav>
+
+        </main>
+
+        <!-- boton de cerrar el menu -->
+        <div class="menu" id="menu">
+            <img class="close-menu" id="close-menu" img src="icons/marca.png" alt="cerrar" width="30px"
+                height="30px"></img>
+
+
+            <ul>
+                <li><a href="index.html"> <img src="icons/casaC.png" alt="inicio"> Inicio</a></li>
+                <li><a href="lessons/lecciones.html"> <img src="icons/carpetaC.png" alt="lecciones"> Lecciones</a>
+                </li>
+                <li><a href="games/juegos.html"> <img src="icons/coheteC.png" alt="juegos">Juegos</a></li>
+                <li><a href="projects/proyectos.html"> <img src="icons/pruebaC.png" alt="proyecto"> Proyectos</a>
+                </li>
+                <li><a href="forum/evaluaciones.html"> <img src="icons/evaluacionesC.png"
+                            alt="evaluaciones">Evaluaciones</a>
+                </li>
+                <li>
+                    <a href="characters/elementos.html"> <img src="icons/ideaC.png" alt="pregunta">Conozcamos los
+                        elementos</a>
+                </li>
+
+
+            </ul>
+
+
 
         </div>
-    </nav>
-</body>
-<script>
 
-    /* btn hamburguesa */
-    const Hmenu = document.querySelector('.btn-hamburguesa');
-    Hmenu.addEventListener('click', () => {
-        Hmenu.classList.toggle("active");
-    })
-</script>
+    </header>
+    <main class="fondoindex br">
+        <div class="divindex">
+
+            <section id="inicio">
+
+
+
+
+                <div id="slider">
+                    <input type="radio" name="slider" id="s1" checked>
+                    <input type="radio" name="slider" id="s2">
+                    <input type="radio" name="slider" id="s3">
+                    <input type="radio" name="slider" id="s4">
+                    <input type="radio" name="slider" id="s5">
+                    <label for="s1" id="slide1">
+                        <img src="icons/buscar.png" alt="">
+                    </label>
+                    <label for="s1" id="slide2">
+                        <img src="icons/buscar.png" alt="">
+                    </label>
+                    <label for="s1" id="slide3">
+                        <img src="icons/buscar.png" alt="">
+                    </label>
+                    <label for="s1" id="slide4">
+                        <img src="icons/buscar.png" alt="">
+                    </label>
+                    <label for="s1" id="slide4">
+                        <img src="icons/buscar.png" alt="">
+                    </label>
+
+
+                </div>
+                <div class="div-logo txt">
+                    <img class="logo" src="logo/logo.png"></a>
+
+                </div>
+
+
+
+
+
+
+                <div class="txt">
+
+                    <h1 class="bn">Bienvenido</h1>
+
+
+                    <p>En esta página, aprenderás de manera divertida cómo hacer tu propia página web. Vamos a
+                        sumergirnos
+                        en <b>HTML, CSS y JavaScript</b>, pero tranquilo, ¡solo lo básico por ahora! A través de
+                        lecciones
+                        interactivas y juegos emocionantes, te guiaremos en este viaje de aprendizaje. ¡Vamos a
+                        comenzar!
+                    </p>
+
+                </div>
+
+
+                <div class="txt">
+                    <center>
+                        <button onclick="window.location.href='lessons/lecciones.html'" class="vamos_comenzar">
+                            ¡Comencemos!
+                        </button><br>
+
+                    </center>
+
+                </div>
+
+
+
+
+                <div class="txt">
+                    <h2>Lecciones</h2>
+                    <p>
+                        Cada leccion esta hecha de forma que puedas obtener el codigo ademas de ver el ejemplo de como
+                        deberia
+                        quedar tu pagina despues de la leccion.
+                    </p>
+                </div>
+
+
+                <div class="txt">
+                    <h2>Juegos</h2>
+                    <p>
+                        Se han diseñado juegos de tal forma que te ayuden a reconocer los elementos en HTML Y las
+                        pseudoclases
+                        de CSS.
+                    </p>
+                </div>
+
+
+
+
+                <div class="txt">
+                    <h2>Proyectos</h2>
+                    <p>
+                        En el apartado de proyectos encontraras actividades las cuales te ayudaran a mejorar, seran
+                        activides
+                        donde tengas que hacer hacer algo en especifico como cambiar el color de un elemento, ademas de
+                        proporcionarte algunos estilos basicos y esto te servira o ayudara en tus proyectos.
+                    </p>
+                </div>
+
+
+
+                <div class="txt">
+                    <h2>Evaluaciones</h2>
+                    <p>
+                        Hay evaluaciones sobre las lecciones, esto es para que tu puedas identificar cuanto has
+                        aprendido ademas
+                        de que si eres alguien familiarizado con esto tu pudas saber el nivel en el que estas.
+                    </p>
+                </div>
+
+
+                <footer>
+                    <p>&copy; 2023 Programación para Niños</p>
+                </footer>
+                <script src="scripts/main.js"></script>
+</body>
 
 </html>
