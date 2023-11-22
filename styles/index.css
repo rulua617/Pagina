@@ -1,5 +1,6 @@
 .fondoindex {
   padding: 30px;
+
   border-radius: 20px;
   border: rgb(86, 25, 207) 9px;
   border-style: groove;
@@ -74,7 +75,25 @@
   display: grid;
   place-items: center;
 }
+.logo {
+  height: 410px;
+}
+.div-logo {
+  height: 77%;
+  /*  width: 45%; */
+}
 .div-logo {
   border-radius: 50%;
   background-image: radial-gradient(circle, deeppink 15% 35%, indigo 55%);
+}
+@media only screen and (max-width: 768px) {
+  .logo {
+    height: 210px;
+  }
+  .div-logo {
+    height: 77%;
+  }
+  .fondoindex {
+    padding: 10px;
+  }
 }

@@ -544,6 +544,9 @@ header + * {
   nav ul li:nth-child(n + 5) {
     display: none;
   }
+  .div-logo {
+    background-image: radial-gradient(circle, deeppink 70% 10%, indigo 25%);
+  }
 
   /*   nav ul li:nth-child(6){
   display: block;
@@ -565,12 +568,6 @@ header + * {
 @media only screen and (max-width: 768px) {
   nav ul li:nth-child(n + 4) {
     display: none;
-  }
-  .logo {
-    height: 210px;
-  }
-  .div-logo {
-    height: 25%;
   }
 
   /*   nav ul li:nth-child(6){
